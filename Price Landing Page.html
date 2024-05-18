@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <title>Pricing Landing Page</title>
+    <style>
+        body {
+            font-family: 'Ubuntu';
+            text-align: center;
+            background-color:#eee;
+        }
+
+        .btn{
+            margin-top: 4%;
+        }
+
+        button{
+
+            border-radius: 12px;
+            background-color:darkcyan;
+            color:white;
+            font-size:90%;
+            width:70%;
+            height:40px;
+        }
+
+        button:hover{
+            background-color:white;
+            color:darkcyan;
+
+        }
+        .btn button{
+            font-size:20px;
+            width:30%;
+            height:10%;
+            background-color:white;
+            color:black;
+        }
+
+        .btn button.active{
+            background-color: cornflowerblue;
+            color: #e1d8d8;
+
+        }
+       
+
+        .month ,.year{
+            
+            display:grid;
+            grid-template-columns: 33% 33% 33%;
+            justify-content: center;
+            margin-left: auto;
+        }
+
+        .month div,.year div{
+            border-radius: 10px;
+            margin:auto auto;
+            margin-bottom: 10%;
+            background-color: white;
+            text-align: center;
+            width:90%;
+            border:1px solid; 
+        }
+
+        .month div:hover,.year div:hover{
+            background-color:#F0FFFF;
+        }
+       
+     h3{
+        font-size: 30px;
+        color:cadetblue
+        } 
+
+@media screen and (max-width: 450px) {
+    .month,
+      .year {
+        display: grid; 
+        grid-template-columns: 90%;
+        justify-content: space-around;
+    }
+}
+
+
+@media screen and (min-width:450px) and (max-width: 676px) {
+    .month,
+    .year {
+        display: grid; 
+        grid-template-columns: 45% 45%;
+        justify-content: space-around;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <h1 >Choose Your Plan</h1>
+    <p>All Plans Free for one month</p>
+    
+    <div class="btn">
+    <button class="mbtn"onclick="month()">Month</button>
+    <button class="ybtn" onclick="year()">Year</button>
+    </div>
+    <br>
+
+
+            <div class="month">
+            
+                <div class="basic">
+
+                <h3>Basic</h3>
+                <p>starter</p>
+                <h2>$199/month</h2>
+                <p>50GB Disk Storage</p>
+                <p>50GB Band Width</p>
+                <p>20 Email Accounts</p>
+                <p>No Maintainance</p>
+                <button style="margin-bottom: 10%;">Choose Plan</button>
+
+                </div>
+
+                <div class="standard">
+
+                    <h3>Standard</h3>
+                    <p>Better Results</p>
+                    <h2>$299/month</h2>
+                    <p>75GB Disk Storage</p>
+                    <p>50GB Band Width</p>
+                    <p>30 Email Accounts</p>
+                    <p>Maintainance</p>
+                    <button style="margin-bottom: 10%;">Choose Plan</button>
+
+                </div>
+
+                <div class="premium">
+
+                    <h3>Premium</h3>
+                    <p>Go all in once</p>
+                    <h2>$399/month</h2>
+                    <p>90GB Disk Storage</p>
+                    <p>50GB Band Width</p>
+                    <p>40 Email Accounts</p>
+                    <p>Maintainance</p>
+                    <button style="margin-bottom: 10%;">Choose Plan</button>
+
+                </div>
+
+            </div>
+            <div class="year">
+
+                <div class="basic">
+
+                    <h3>Basic</h3>
+                    <p>starter</p>
+                    <h2>$1999/year</h2>
+                    <p>50GB Disk Storage</p>
+                    <p>50GB Band Width</p>
+                    <p>20 Email Accounts</p>
+                    <p>No Maintainance</p>
+                    <button style="margin-bottom: 10%;">Choose Plan</button>
+
+                </div>
+                <div class="standard">
+
+                    
+                    <h3>Standard</h3>
+                    <p>Better Results</p>
+                    <h2>$2999/year</h2>
+                    <p>75GB Disk Storage</p>
+                    <p>50GB Band Width</p>
+                    <p>30 Email Accounts</p>
+                    <p>Maintainance</p>
+                    <button style="margin-bottom: 10%;">Choose Plan</button>
+              
+                </div>
+                <div class="premium">
+
+                    <h3>Premium</h3>
+                    <p>Go all in once</p>
+                    <h2>$3999/year</h2>
+                    <p>90GB Disk Storage</p>
+                    <p>50GB Band Width</p>
+                    <p>40 Email Accounts</p>
+                    <p>Maintainance</p>
+                    <button style="margin-bottom:10%;">Choose Plan</button>
+             
+                </div>
+                
+            </div>
+      
+    
+
+          
+    <script>
+    let mon = document.querySelector(".month");
+    let yr = document.querySelector(".year");
+    let mbt = document.querySelector(".mbtn");
+    let ye = document.querySelector(".ybtn");
+
+    yr.style.display = "none";
+    mbt.classList.add("active"); // Initially set the "Month" button as active
+
+    function month() {
+        mbt.classList.add("active");
+        ye.classList.remove("active");
+
+        yr.style.display = "none";
+        mon.style.display = "grid";
+    }
+
+    function year() {
+        ye.classList.add("active");
+        mbt.classList.remove("active");
+
+        mon.style.display = "none";
+        yr.style.display = "grid";
+    }
+    </script>  
+</body>
+</html>
